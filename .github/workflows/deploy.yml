@@ -25,15 +25,9 @@ jobs:
         with:
           node-version: 20
 
-      # ✅ Works with or without a lockfile
+      # ✅ No lockfile required
       - name: Install dependencies
-        shell: bash
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+        run: npm install
 
       - name: Build
         run: npm run build
